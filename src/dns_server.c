@@ -351,7 +351,7 @@ static void _dns_server_audit_log(struct dns_request *request)
 	snprintf(req_time, sizeof(req_time), "[%.4d-%.2d-%.2d %.2d:%.2d:%.2d,%.3d]", tm.year, tm.mon, tm.mday, tm.hour,
 			 tm.min, tm.sec, tm.usec / 1000);
 
-	tlog_printf(dns_audit, "%s %s query %s, type %d, result %s\n", req_time, req_host, request->domain, request->qtype,
+	tlog_printf(dns_audit, "address /%s/%s\n", request->domain,
 				req_result);
 }
 
